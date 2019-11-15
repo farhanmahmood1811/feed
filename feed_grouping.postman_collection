@@ -1,0 +1,369 @@
+{
+	"variables": [],
+	"info": {
+		"name": "feed_grouping",
+		"_postman_id": "bded31ba-3597-e4fc-4415-38ca30d0be35",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"description": "",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"url": "localhost:3000/auth/register",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "farhan",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "farhan",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "farhan mahmood",
+									"type": "text"
+								}
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"url": "localhost:3000/auth/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "farhan",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "farhan",
+									"type": "text"
+								}
+							]
+						},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Item",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Item",
+					"request": {
+						"url": "localhost:3000/item",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"description": "z"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Shirt",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "brand",
+									"value": "polo",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "abcd",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": "Create Item"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Item",
+					"request": {
+						"url": "localhost:3000/item/5b9586b62d98c54431753b2c",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Update Item",
+					"request": {
+						"url": "localhost:3000/item/5b9825c78462426368f4f6c8",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "balah bala ",
+									"description": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "brand",
+									"value": "blah blah",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Get Item",
+					"request": {
+						"url": "localhost:3000/item",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZhcmhhbiIsIl9pZCI6IjViOTkyMTdkNTFiZDAxN2U3ZWQ3MDQzNCIsImlhdCI6MTUzNjc2MjI0MCwiZXhwIjoxNTM2ODQ4NjQwfQ.f9nJQI9B0Hnu8MwrSM8mLzONCx_ZI2yo-I8ZWECdYus",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "use nextId in response as indicator of paginated data available"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Variant",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Variant",
+					"request": {
+						"url": "localhost:3000/variant",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "common",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "itemId",
+									"value": "5b9586b62d98c54431753b2c",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "sellingPrice",
+									"value": "1051",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "costPrice",
+									"value": "60",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "properties",
+									"value": "cotton, blue",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "quantity",
+									"value": "0",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Update Variant",
+					"request": {
+						"url": "localhost:3000/variant/5b9922473653c07e9dcff4c2",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "variant 1",
+									"description": "",
+									"type": "text"
+								},
+								{
+									"key": "sellingPrice",
+									"value": "1200",
+									"description": "",
+									"type": "text"
+								}
+							]
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Variant",
+					"request": {
+						"url": "localhost:3000/variant/5b9922473653c07e9dcff4c2",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get Notification feed",
+			"request": {
+				"url": {
+					"raw": "localhost:3000/notification?start=11-09-2018&end=29-10-2018",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"notification"
+					],
+					"query": [
+						{
+							"key": "start",
+							"value": "11-09-2018",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "end",
+							"value": "29-10-2018",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": null
+			},
+			"response": []
+		}
+	]
+}

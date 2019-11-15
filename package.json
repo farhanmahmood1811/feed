@@ -1,0 +1,38 @@
+{
+  "name": "feed_grouping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/server.js",
+  "repository": {},
+  "keywords": [
+    "express",
+    "es6"
+  ],
+  "scripts": {
+    "start": "node bin/dev",
+    "build": "npm run clean && babel lib -s -d build",
+    "clean": "rm -rf build && mkdir build",
+    "production": "npm run build && NODE_ENV=production node bin/production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "farhan mahmood",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "helmet": "^3.12.1",
+    "jsonwebtoken": "^8.3.0",
+    "moment": "^2.22.2",
+    "mongoose": "^5.2.4",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0"
+  }
+}
